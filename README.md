@@ -35,3 +35,11 @@ To see the result of the Golden Master Test you can run:
 ```bash
 yarn golden-master
 ```
+
+Or
+
+```bash
+yarn precompile
+yarn compile
+node test/golden-master-text-test.js
+```
