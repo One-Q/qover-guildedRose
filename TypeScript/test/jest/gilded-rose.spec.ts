@@ -1,4 +1,10 @@
+import { ItemUpdaterFactory } from "@/factories/itemUpdaterFactory";
 import { GildedRose, Item } from "@/gilded-rose";
+import { AgedBrieUpdater } from "@/updaters/agedBrieUpdater";
+import { BackstageUpdater } from "@/updaters/backstagePassUpdater";
+import { ConjuredUpdater } from "@/updaters/conjuredUpdater";
+import { NormalItemUpdater } from "@/updaters/normalItemUpdater";
+import { SulfurasUpdater } from "@/updaters/sulfurasUpdater";
 
 describe("Gilded Rose", () => {
   describe("Normal item", () => {
@@ -127,6 +133,47 @@ describe("Gilded Rose", () => {
       gildedRose.updateQuality();
 
       expect(items[0].quality).toBe(0);
+    });
+  });
+
+  describe("ItemUpdaterFactory", () => {
+    it("returns AgedBrieUpdater", () => {
+      const item = new Item("Aged Brie", 10, 20);
+      const updater = ItemUpdaterFactory.create(item);
+
+      expect(updater).toBeInstanceOf(AgedBrieUpdater);
+    });
+
+    it("returns ConjuredUpdater", () => {
+      const item = new Item("Conjured Mana Cake", 10, 20);
+      const updater = ItemUpdaterFactory.create(item);
+
+      expect(updater).toBeInstanceOf(ConjuredUpdater);
+    });
+
+    it("returns SulfurasUpdater", () => {
+      const item = new Item("Sulfuras, Hand of Ragnaros", 0, 80);
+      const updater = ItemUpdaterFactory.create(item);
+
+      expect(updater).toBeInstanceOf(SulfurasUpdater);
+    });
+
+    it("returns BackstageUpdater", () => {
+      const item = new Item(
+        "Backstage passes to a TAFKAL80ETC concert",
+        10,
+        20,
+      );
+      const updater = ItemUpdaterFactory.create(item);
+
+      expect(updater).toBeInstanceOf(BackstageUpdater);
+    });
+
+    it("returns NormalItemUpdater by default", () => {
+      const item = new Item("Random Item", 10, 20);
+      const updater = ItemUpdaterFactory.create(item);
+
+      expect(updater).toBeInstanceOf(NormalItemUpdater);
     });
   });
 });
