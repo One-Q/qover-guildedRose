@@ -11,7 +11,7 @@ export abstract class ItemUpdater {
     item.sellIn--;
   }
 
-  protected abstract updateQuality(item: Item): void;
+  protected updateQuality(item: Item): void {}
 
   protected increaseQuality(item: Item) {
     if (item.quality < MAX_QUALITY) item.quality++;
