@@ -1,5 +1,5 @@
-import { Item } from "@/gilded-rose";
-import { MAX_QUALITY, MIN_QUALITY } from "@/utils/constants";
+import { Item } from "../gilded-rose";
+import { MAX_QUALITY, MIN_QUALITY } from "../utils/constants";
 
 export abstract class ItemUpdater {
   update(item: Item) {

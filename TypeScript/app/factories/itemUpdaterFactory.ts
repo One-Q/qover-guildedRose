@@ -1,10 +1,10 @@
-import { Item } from "@/gilded-rose";
-import { ItemUpdater } from "@/updaters/itemUpdater";
-import { NormalItemUpdater } from "@/updaters/normalItemUpdater";
-import { AgedBrieUpdater } from "@/updaters/agedBrieUpdater";
-import { BackstageUpdater } from "@/updaters/backstagePassUpdater";
-import { SulfurasUpdater } from "@/updaters/sulfurasUpdater";
-import { ConjuredUpdater } from "@/updaters/conjuredUpdater";
+import { Item } from "../gilded-rose";
+import { ItemUpdater } from "../updaters/itemUpdater";
+import { NormalItemUpdater } from "../updaters/normalItemUpdater";
+import { AgedBrieUpdater } from "../updaters/agedBrieUpdater";
+import { BackstageUpdater } from "../updaters/backstagePassUpdater";
+import { SulfurasUpdater } from "../updaters/sulfurasUpdater";
+import { ConjuredUpdater } from "../updaters/conjuredUpdater";
 
 type Matcher = (item: Item) => boolean;
 

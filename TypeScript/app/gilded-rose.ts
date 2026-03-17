@@ -1,4 +1,4 @@
-import { ItemUpdaterFactory } from "@/factories/itemUpdaterFactory";
+import { ItemUpdaterFactory } from "./factories/itemUpdaterFactory";
 
 export class Item {
   name: string;
